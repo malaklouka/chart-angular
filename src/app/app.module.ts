@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { StreamService } from './Services/stream.service';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     BrowserAnimationsModule,
     MatButtonToggleModule
   ],
-  providers: [],
+  providers: [StreamService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

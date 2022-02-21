@@ -15,6 +15,7 @@ import {
   ApexPlotOptions
 } from "ng-apexcharts";
 import { series } from "./data";
+import { StreamService } from "./Services/stream.service";
 
 
 
@@ -59,7 +60,7 @@ export class AppComponent {
 
 	isEnabled: false;
 
-  constructor() {
+  constructor(private MyStream: StreamService) {
     this.chartOptions = {
       series: [
         {
@@ -170,4 +171,32 @@ export class AppComponent {
       }
     };
   }
+
+ loadme(){
+  this.MyStream.createStream().subscribe(
+    next => {
+      console.log(next)
+    },
+    error=> {
+      console.log(error)
+,
+()=> {
+ console.log("done")
+}     }
+  )
+}
+
+loadme1(){
+  this.MyStream.createStream1().subscribe(
+    next => {
+      console.log(next)
+    },
+    error=> {
+      console.log(error)
+,
+()=> {
+ console.log("done")
+}     }
+  )
+}
 }
